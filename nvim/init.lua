@@ -33,3 +33,4 @@ vim.keymap.set('n', '<leader>fb', ':Buffers<CR>', { desc = 'Find buffers' })
 vim.keymap.set('n', '<leader>fh', ':Helptags<CR>', { desc = 'Help tags' })
 
 vim.opt.clipboard = "unnamedplus"
+vim.opt.relativenumber = true
