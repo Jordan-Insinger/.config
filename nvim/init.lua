@@ -53,7 +53,7 @@ vim.wo.relativenumber = true
 -- Define a global Lua function to use as the foldtext
 function _G.CustomFoldText()
   -- Get the text of the first line of the fold
-  local line = vim.fn.getline(vim.v.foldstart)
+  local line = ""
 
   -- Return only the content of the line, without any extra text or line count
   -- You can add optional elements like "..."
@@ -69,3 +69,7 @@ vim.opt.fillchars:append({ fold = " " })
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.foldlevelstart = 99
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
