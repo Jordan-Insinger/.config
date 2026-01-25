@@ -1,5 +1,3 @@
--- comment here
-
 local M = {};
 
 local Colors = {
@@ -35,8 +33,23 @@ function M.colorscheme()
 	set(0, "LineNr", {bg = Colors.bg, fg = Colors.red})
 	set(0, "LineNrAbove", {bg = Colors.bg, fg = Colors.yellow})
 	set(0, "LineNrBelow", {bg = Colors.bg, fg = Colors.yellow})
-	set(0, "CursorLineNr", {bg = Colors.red, fg = Colors.red})
-	
+	set(0, "CursorLineNr", {bg = Colors.red, fg = Colors.red})	
+
+	set(0, "Keyword",        {bg = Colors.bg, fg = Colors.pink })
+	set(0, "Conditional",    {bg = Colors.bg, fg = Colors.pink })
+	set(0, "Repeat",         {bg = Colors.bg, fg = Colors.pink })
+	set(0, "Label",          {bg = Colors.bg, fg = Colors.pink })
+	set(0, "Exception",      {bg = Colors.bg, fg = Colors.pink })
+
+	-- Constants & literals
+	set(0, "Constant",       {bg = Colors.bg, fg = Colors.neon_blue })
+	set(0, "Number",         {bg = Colors.bg, fg = Colors.yellow })
+	set(0, "Float",          {bg = Colors.bg, fg = Colors.yellow })
+	set(0, "Boolean",        {bg = Colors.bg, fg = Colors.orange })
+	set(0, "Character",      {bg = Colors.bg, fg = Colors.neon_green })
+
+	-- love this
+	set(0, "TODO",			  {bg = Colors.bg, fg = Colors.yellow, bold = true})
 end
 
 return M
