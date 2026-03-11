@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', branch = 'v0.2.1',
+	  'nvim-telescope/telescope.nvim', branch = 'v0.1.9',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   } 
 
@@ -20,7 +20,22 @@ return require('packer').startup(function(use)
 	  end
   })
 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use({
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate',
+      config = function()
+        require('nvim-treesitter.config').setup {
+            ensure_installed = { "lua", "python", "cpp", "c", "vim", "vimdoc" },
+            sync_install = false,
+            auto_install = true,
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false,
+            },
+        }
+    end
+  })
+
   use('ThePrimeagen/harpoon')
   use('tpope/vim-fugitive')
 
